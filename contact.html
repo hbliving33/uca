@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact | Union Capital Associates</title>
+<meta name="description" content="Start an equipment financing request with Union Capital Associates.">
+<link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/mark.svg" alt="" width="42" height="42"><span class="name"><b>UNION CAPITAL</b><small>ASSOCIATES, INC.</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main"><a href="index.html">Home</a><a href="financing.html">Financing</a><a href="industries.html">Industries</a><a href="about.html">About</a><a class="btn btn-gold" href="contact.html#request" aria-current="page">Get started</a></nav>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <img src="https://images.unsplash.com/photo-1580901369227-308f6f40bdeb?auto=format&fit=crop&w=2000&q=70" alt="">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h1>Start your <em>financing request</em>.</h1>
+    <p>Tell us about the equipment and your business.  We'll get back to you, usually within one business day.</p>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap contact-grid">
+    <form class="form" id="request" action="https://formsubmit.co/shickerson@ucacorp.net" method="POST">
+      <h2>Financing request</h2>
+      <p class="intro">It takes about two minutes.  Fields marked optional can be skipped.</p>
+      <input type="hidden" name="_subject" value="New financing request from the UCA website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" id="nextUrl" value="https://hbliving33.github.io/uca/thanks.html">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="row">
+        <label for="f-name">Full name<input id="f-name" name="name" type="text" autocomplete="name" required></label>
+        <label for="f-company">Company<input id="f-company" name="company" type="text" autocomplete="organization" required></label>
+      </div>
+      <div class="row">
+        <label for="f-email">Email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+        <label for="f-phone">Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel" required></label>
+      </div>
+      <div class="row">
+        <label for="f-type">Equipment type
+          <select id="f-type" name="equipment_type" required>
+            <option value="">Choose one</option>
+            <option>Construction</option><option>Transportation</option><option>Medical</option><option>Manufacturing</option>
+            <option>Material handling</option><option>Restaurant and food service</option><option>Technology</option><option>Other</option>
+          </select>
+        </label>
+        <label for="f-cost">Approximate cost
+          <select id="f-cost" name="approximate_cost" required>
+            <option value="">Choose one</option>
+            <option>Under $25,000</option><option>$25,000 to $100,000</option><option>$100,000 to $250,000</option>
+            <option>$250,000 to $1,000,000</option><option>Over $1,000,000</option>
+          </select>
+        </label>
+      </div>
+      <fieldset>
+        <legend>New or used?</legend>
+        <div class="radios">
+          <label><input type="radio" name="condition" value="New" checked> New</label>
+          <label><input type="radio" name="condition" value="Used"> Used</label>
+          <label><input type="radio" name="condition" value="Not sure yet"> Not sure yet</label>
+        </div>
+      </fieldset>
+      <div class="row">
+        <label for="f-years">Time in business
+          <select id="f-years" name="time_in_business">
+            <option value="">Choose one</option>
+            <option>Less than 2 years</option><option>2 to 5 years</option><option>5 to 10 years</option><option>More than 10 years</option>
+          </select>
+        </label>
+        <label for="f-state">State<select id="f-state" name="state"><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option selected>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select></label>
+      </div>
+      <label for="f-msg">Tell us about it <span class="opt-l">(optional)</span><textarea id="f-msg" name="message" rows="5" placeholder="Make and model, vendor, timing, or anything else that helps."></textarea></label>
+      <button class="btn btn-gold" type="submit">Send request <span class="arr">→</span></button>
+      <p class="fine">Please don't include Social Security numbers, tax IDs or bank account numbers in this form.  We'll collect anything sensitive securely if it's needed.</p>
+    </form>
+    <aside class="card-dark">
+      <h2>Talk to Scott directly</h2>
+      <ul class="clist">
+        <li><span class="k">Partner</span><span class="v">Scott Hickerson</span></li>
+        <li><span class="k">Direct phone</span><a class="v" href="tel:+17143520755">(714) 352-0755</a></li>
+        <li><span class="k">Fax</span><span class="v">(323) 579-1158</span></li>
+        <li><span class="k">Email</span><a class="v" href="mailto:shickerson@ucacorp.net">shickerson@ucacorp.net</a></li>
+        <li><span class="k">Office</span><span class="v">Fountain Valley, California</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html"><img src="assets/img/mark.svg" alt="" width="42" height="42"><span class="name"><b>UNION CAPITAL</b><small>ASSOCIATES, INC.</small></span></a>
+      <p>Equipment financing and leasing for businesses that build, haul, heal, make and serve.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul><li><a href="index.html">Home</a></li><li><a href="financing.html">Financing</a></li><li><a href="industries.html">Industries</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>Scott Hickerson, Partner</li>
+        <li><a href="tel:+17143520755">(714) 352-0755</a> direct</li>
+        <li>(323) 579-1158 fax</li>
+        <li><a href="mailto:shickerson@ucacorp.net">shickerson@ucacorp.net</a></li>
+        <li>Fountain Valley, California</li>
+      </ul>
+    </div>
+    <div class="legal"><span>&copy; 2026 Union Capital Associates, Inc.  All rights reserved.</span><span>All financing is subject to credit approval.</span></div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

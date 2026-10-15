@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Union Capital Associates">
+  <rect width="64" height="64" rx="6" fill="#0d1522"/>
+  <path d="M14 14v20a18 18 0 0 0 36 0V14h-9v20a9 9 0 0 1-18 0V14z" fill="#f2a900"/>
+  <rect x="14" y="54" width="36" height="3" fill="#f2a900"/>
+</svg>
