@@ -1,0 +1,59 @@
+/* Building test page: a glass tower whose floors are the financing options. */
+.bld-hero { position: relative; background: radial-gradient(ellipse at 70% 30%, #1a2a47 0%, var(--ink) 62%); color: var(--white); overflow: hidden; }
+.bld-hero .wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: 32px; align-items: start; padding-block: 56px 48px; }
+@media (max-width: 960px) { .bld-hero .wrap { grid-template-columns: 1fr; padding-block: 40px 24px; } }
+.bld-copy { min-width: 0; }
+.bld-copy h1 { font-size: clamp(38px, 5.4vw, 66px); font-weight: 800; margin: 16px 0 16px; }
+.bld-copy h1 em { font-style: normal; color: var(--gold); }
+.bld-copy .lede { color: rgba(255, 255, 255, .8); font-size: 18px; max-width: 46ch; margin: 0 0 26px; }
+.floors-pick { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-width: 460px; }
+.floors-pick button { width: 100%; display: grid; grid-template-columns: 58px 1fr auto; align-items: center; gap: 12px; text-align: left; font: inherit; color: var(--white); background: rgba(255, 255, 255, .04); border: 1px solid var(--line-dark); border-radius: 2px; padding: 11px 14px; cursor: pointer; transition: border-color .2s, background .2s; }
+.floors-pick button:hover { border-color: rgba(242, 169, 0, .6); }
+.floors-pick .lvl { font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; color: rgba(255, 255, 255, .55); }
+.floors-pick .nm { font-family: var(--display); font-stretch: 110%; font-weight: 700; font-size: 16px; }
+.floors-pick .ar { color: var(--gold); opacity: 0; transition: opacity .2s, transform .2s; }
+.floors-pick button[aria-pressed="true"] { border-color: var(--gold); background: rgba(242, 169, 0, .12); }
+.floors-pick button[aria-pressed="true"] .lvl { color: var(--gold); }
+.floors-pick button[aria-pressed="true"] .ar, .floors-pick button:hover .ar { opacity: 1; }
+.floor-detail { margin-top: 18px; min-height: 92px; max-width: 460px; border-left: 3px solid var(--gold); padding: 4px 0 4px 16px; }
+.floor-detail b { display: block; font-family: var(--display); font-stretch: 110%; font-size: 19px; }
+.floor-detail p { margin: 4px 0 0; color: rgba(255, 255, 255, .74); font-size: 15px; }
+.bld-hint { margin-top: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .5); }
+
+/* Stage */
+.bstage { --w: min(210px, 46vw); --h: calc(var(--w) * .27); --d: var(--w); position: relative; align-self: start; height: calc(var(--w) * 2.7); display: grid; place-items: center; perspective: 1400px; perspective-origin: 50% 35%; touch-action: none; cursor: grab; user-select: none; }
+.bstage.dragging { cursor: grabbing; }
+.tower { position: relative; width: var(--w); height: var(--w); transform-style: preserve-3d; }
+.floor { position: absolute; left: 0; top: calc(50% - var(--h) / 2); width: var(--w); height: var(--h); transform-style: preserve-3d; transition: transform .8s cubic-bezier(.2, .9, .25, 1.12), opacity .5s; }
+.floor.flying { transition: transform 1.1s cubic-bezier(.15, .75, .3, 1); }
+.floor.pre { opacity: 0; }
+.bf { position: absolute; display: grid; background: linear-gradient(180deg, rgba(40, 70, 120, .55), rgba(16, 30, 58, .72)); border: 1px solid rgba(160, 190, 240, .45); box-shadow: inset 0 0 18px rgba(127, 166, 255, .12); transition: background .4s, border-color .4s, box-shadow .4s; }
+.bf.fr, .bf.bk { width: var(--w); height: var(--h); grid-template-columns: repeat(8, 1fr); }
+.bf.lt, .bf.rt { width: var(--d); height: var(--h); left: calc((var(--w) - var(--d)) / 2); grid-template-columns: repeat(8, 1fr); }
+.bf.tp, .bf.bt { width: var(--w); height: var(--d); top: calc((var(--h) - var(--d)) / 2); background: rgba(13, 21, 34, .92); border-color: rgba(160, 190, 240, .35); }
+.bf.fr { transform: translateZ(calc(var(--d) / 2)); }
+.bf.bk { transform: rotateY(180deg) translateZ(calc(var(--d) / 2)); }
+.bf.rt { transform: rotateY(90deg) translateZ(calc(var(--w) / 2)); }
+.bf.lt { transform: rotateY(-90deg) translateZ(calc(var(--w) / 2)); }
+.bf.tp { transform: rotateX(90deg) translateZ(calc(var(--h) / 2)); }
+.bf.bt { transform: rotateX(-90deg) translateZ(calc(var(--h) / 2)); }
+/* window panes */
+.bf i { display: block; margin: 18% 10%; border-radius: 1px; background: rgba(150, 185, 235, .16); transition: background .5s, box-shadow .5s; }
+.bf i.on { background: rgba(255, 214, 120, .78); box-shadow: 0 0 6px rgba(255, 200, 90, .7); }
+/* roof */
+.floor.top .bf.tp { background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .05) 0 1px, transparent 1px 22px), #101a2c; display: grid; place-items: center; }
+.floor.top .bf.tp img { width: 34%; opacity: .95; }
+/* selected floor */
+.floor.sel .bf { border-color: var(--gold); background: linear-gradient(180deg, rgba(242, 169, 0, .55), rgba(150, 95, 0, .55)); box-shadow: inset 0 0 22px rgba(255, 200, 80, .55), 0 0 26px rgba(242, 169, 0, .45); }
+.floor.sel .bf.tp, .floor.sel .bf.bt { background: rgba(120, 76, 0, .85); }
+.floor.sel .bf i { background: rgba(255, 245, 210, .85); box-shadow: 0 0 8px rgba(255, 230, 160, .9); }
+.floor.sel.flash .bf { animation: bflash .45s ease-out 3; }
+@keyframes bflash { 0% { background: rgba(255, 255, 255, .85); } 100% { background: linear-gradient(180deg, rgba(242, 169, 0, .55), rgba(150, 95, 0, .55)); } }
+/* ground plaza */
+.plaza { position: absolute; left: 50%; top: 50%; width: calc(var(--w) * 2.4); height: calc(var(--w) * 2.4); margin: calc(var(--w) * -1.2) 0 0 calc(var(--w) * -1.2); transform-style: preserve-3d; pointer-events: none; }
+.plaza div { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, rgba(242, 169, 0, .16), rgba(127, 166, 255, .08) 40%, transparent 68%), repeating-linear-gradient(0deg, rgba(160, 190, 240, .10) 0 1px, transparent 1px 24px), repeating-linear-gradient(90deg, rgba(160, 190, 240, .10) 0 1px, transparent 1px 24px); -webkit-mask-image: radial-gradient(circle, #000 35%, transparent 70%); mask-image: radial-gradient(circle, #000 35%, transparent 70%); }
+/* sign */
+.bsign { position: absolute; left: 50%; top: 0; transform: translateX(-50%); pointer-events: none; text-align: center; z-index: 3; }
+.bsign small { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .2em; color: var(--gold); margin-bottom: 6px; min-height: 1.2em; }
+.bsign b { display: block; font-family: var(--mono); font-weight: 600; font-size: clamp(18px, 2.4vw, 26px); letter-spacing: .1em; color: var(--white); text-shadow: 0 0 14px rgba(242, 169, 0, .8); min-height: 1.3em; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .floor, .floor.flying { transition-duration: .2s; } .floor.sel.flash .bf { animation: none; } }
